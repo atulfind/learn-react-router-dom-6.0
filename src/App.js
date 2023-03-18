@@ -8,6 +8,8 @@ import Posts from './pages/posts';
 import ErrorPage from './pages/error';
 import UserForm, {action as userFormAction} from './pages/form';
 import DeferPosts, {loader as deferPostsLoader} from './pages/deferPosts';
+import FetcherSubmit, {action as submitAction, loader as submitLoader} from './pages/fetcherSubmit';
+import News, {action as newsAction, loader as newsLoader} from './pages/news';
 
 // const router = createBrowserRouter([
 //   {
@@ -37,6 +39,18 @@ const router = createBrowserRouter(createRoutesFromElements(
       path='/deferPost'
       element={<DeferPosts />}
       loader={deferPostsLoader}
+    />
+    <Route
+      path='/fetcherSubmit'
+      element={<FetcherSubmit />}
+      action={submitAction}
+      loader={submitLoader}
+    />
+     <Route
+      path='/news'
+      element={<News />}
+      action={newsAction}
+      loader={newsLoader}
     />
   </Route>
 ))
